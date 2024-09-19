@@ -1,0 +1,35 @@
+# Superhero Character Generator
+# By: Wandering-Mind
+
+def generate_super_character():
+    """Generates a superhero character based on user input."""
+
+    name = input("Enter the superhero's name: ")
+    origin = input("Enter the superhero's origin story: ")
+
+    powers = []
+    while True:
+        power = input("Enter a power (or 'done' to finish): ")
+        if power.lower() == "done":
+            break
+        powers.append(power)
+
+    # Generate a random weakness based on the powers
+    if "strength" in powers:
+        weakness = "magic"
+    elif "speed" in powers:
+        weakness = "ice"
+    elif "flight" in powers:
+        weakness = "electricity"
+    else:
+        weakness = "fire"
+
+    # Print the character profile
+    print("\nSuperhero Character Profile\n")
+    print("Name:", name)
+    print("Origin:", origin)
+    print("Powers:", powers)
+    print("Weakness:", weakness)
+
+if __name__ == "__main__":
+    generate_super_character()
